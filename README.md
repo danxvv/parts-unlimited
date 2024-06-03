@@ -60,13 +60,6 @@ This project is a take-home coding challenge for Qventus. It is an API that allo
    docker run -p 8000:8000 -v $(pwd):/usr/src/app parts_unlimited_api
    ```
 
-### Docker Compose Way
-
-3. Run Docker Compose:
-   ```bash
-   docker-compose up
-   ```
-
 ### Local Way
 
 3. Install the dependencies:
