@@ -1,0 +1,994 @@
+{
+	"info": {
+		"_postman_id": "18dc0eb9-1a9f-47ac-a521-126d16cc8eb6",
+		"name": "Parts Unlimited API QVentus",
+		"description": "API for take-home assignment for QVentus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8105926"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "common-words",
+					"item": [
+						{
+							"name": "common words retrieve",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "sessionid",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/common-words/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"common-words",
+										""
+									]
+								},
+								"description": "Retrieve the 5 most common words in the descriptions of all parts."
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/common-words/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"common-words",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<integer>\",\n  \"word\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "parts",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "parts retrieve",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "sessionid",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/parts/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"parts",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) A unique integer value identifying this part."
+												}
+											]
+										},
+										"description": "Retrieve a single part by ID."
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "sessionid",
+														"value": "<API Key>",
+														"description": "Added as a part of security scheme: apikey"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/parts/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"parts",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"links\": [\n    {\n      \"aliqua_d4\": \"<string>\"\n    },\n    {\n      \"laborumc\": \"<string>\",\n      \"labored\": \"<string>\",\n      \"enim54\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"weight_ounces\": \"<long>\",\n  \"is_active\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "parts update",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "sessionid",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "description",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												},
+												{
+													"key": "links",
+													"value": "[object Object]",
+													"description": "(Required) "
+												},
+												{
+													"key": "links",
+													"value": "[object Object]",
+													"description": "(Required) "
+												},
+												{
+													"key": "name",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "sku",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "weight_ounces",
+													"value": "<long>",
+													"description": "(Required) "
+												},
+												{
+													"key": "is_active",
+													"value": "<boolean>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/parts/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"parts",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) A unique integer value identifying this part."
+												}
+											]
+										},
+										"description": "Update an existing part."
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "sessionid",
+														"value": "<API Key>",
+														"description": "Added as a part of security scheme: apikey"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "description",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "links",
+															"value": "[object Object]",
+															"description": "(Required) "
+														},
+														{
+															"key": "links",
+															"value": "[object Object]",
+															"description": "(Required) "
+														},
+														{
+															"key": "name",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "sku",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "weight_ounces",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "is_active",
+															"value": "<boolean>"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/parts/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"parts",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"links\": [\n    {\n      \"aliqua_d4\": \"<string>\"\n    },\n    {\n      \"laborumc\": \"<string>\",\n      \"labored\": \"<string>\",\n      \"enim54\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"weight_ounces\": \"<long>\",\n  \"is_active\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "parts partial update",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "sessionid",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "<integer>"
+												},
+												{
+													"key": "links",
+													"value": "[object Object]"
+												},
+												{
+													"key": "links",
+													"value": "[object Object]"
+												},
+												{
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"key": "sku",
+													"value": "<string>"
+												},
+												{
+													"key": "description",
+													"value": "<string>"
+												},
+												{
+													"key": "weight_ounces",
+													"value": "<long>"
+												},
+												{
+													"key": "is_active",
+													"value": "<boolean>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/parts/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"parts",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) A unique integer value identifying this part."
+												}
+											]
+										},
+										"description": "Partially update an existing part."
+									},
+									"response": [
+										{
+											"name": "Untitled Response",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "sessionid",
+														"value": "<API Key>",
+														"description": "Added as a part of security scheme: apikey"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "id",
+															"value": "<integer>"
+														},
+														{
+															"key": "links",
+															"value": "[object Object]"
+														},
+														{
+															"key": "links",
+															"value": "[object Object]"
+														},
+														{
+															"key": "name",
+															"value": "<string>"
+														},
+														{
+															"key": "sku",
+															"value": "<string>"
+														},
+														{
+															"key": "description",
+															"value": "<string>"
+														},
+														{
+															"key": "weight_ounces",
+															"value": "<long>"
+														},
+														{
+															"key": "is_active",
+															"value": "<boolean>"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/parts/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"parts",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"links\": [\n    {\n      \"aliqua_d4\": \"<string>\"\n    },\n    {\n      \"laborumc\": \"<string>\",\n      \"labored\": \"<string>\",\n      \"enim54\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"weight_ounces\": \"<long>\",\n  \"is_active\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "parts destroy",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "sessionid",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/parts/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"parts",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) A unique integer value identifying this part."
+												}
+											]
+										},
+										"description": "Delete an existing part."
+									},
+									"response": [
+										{
+											"name": "No response body",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "sessionid",
+														"value": "<API Key>",
+														"description": "Added as a part of security scheme: apikey"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/parts/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"parts",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "parts list",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "sessionid",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/parts/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"parts",
+										""
+									],
+									"query": [
+										{
+											"key": "is_active",
+											"value": "<boolean>",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "A page number within the paginated result set.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Retrieve a list of parts, optionally filtered by is_active"
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/parts/?is_active=<boolean>&page=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"parts",
+												""
+											],
+											"query": [
+												{
+													"key": "is_active",
+													"value": "<boolean>"
+												},
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "A page number within the paginated result set."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<integer>\",\n  \"results\": [\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"links\": [\n        {\n          \"sit_6_4\": \"<string>\",\n          \"incididunt_7\": \"<string>\"\n        },\n        {\n          \"cupidatat3\": \"<string>\",\n          \"inf\": \"<string>\",\n          \"tempor_0f\": \"<string>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"sku\": \"<string>\",\n      \"weight_ounces\": \"<long>\",\n      \"is_active\": \"<boolean>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"links\": [\n        {\n          \"et97a\": \"<string>\"\n        },\n        {\n          \"ut_7\": \"<string>\",\n          \"consectetur_a_0\": \"<string>\",\n          \"ex57b\": \"<string>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"sku\": \"<string>\",\n      \"weight_ounces\": \"<long>\",\n      \"is_active\": \"<boolean>\"\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "parts create",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "sessionid",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "description",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) "
+										},
+										{
+											"key": "links",
+											"value": "[object Object]",
+											"description": "(Required) "
+										},
+										{
+											"key": "links",
+											"value": "[object Object]",
+											"description": "(Required) "
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "sku",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "weight_ounces",
+											"value": "<long>",
+											"description": "(Required) "
+										},
+										{
+											"key": "is_active",
+											"value": "<boolean>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/parts/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"parts",
+										""
+									]
+								},
+								"description": "Create a new part."
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "description",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												},
+												{
+													"key": "links",
+													"value": "[object Object]",
+													"description": "(Required) "
+												},
+												{
+													"key": "links",
+													"value": "[object Object]",
+													"description": "(Required) "
+												},
+												{
+													"key": "name",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "sku",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "weight_ounces",
+													"value": "<long>",
+													"description": "(Required) "
+												},
+												{
+													"key": "is_active",
+													"value": "<boolean>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/parts/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"parts",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"links\": [\n    {\n      \"aliqua_d4\": \"<string>\"\n    },\n    {\n      \"laborumc\": \"<string>\",\n      \"labored\": \"<string>\",\n      \"enim54\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"weight_ounces\": \"<long>\",\n  \"is_active\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
