@@ -292,3 +292,6 @@ Manage parts in the system.
   ```bash
   python manage.py clean_data
   ```
+  
+## Cloud Deploy
+- The API is deployed and can be accessed at [https://parts-unlimited.danielmojica.me/](https://parts-unlimited.danielmojica.me/)
